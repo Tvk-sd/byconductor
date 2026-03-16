@@ -1,7 +1,7 @@
 # Conductor V2 — Handoff
 
-Last updated: 2026-03-16
-Status: Drilling phases — Scope Zero ✅ Specify ✅ Design next
+Last updated: 2026-03-17
+Status: Drilling phases — Scope Zero ✅ Specify ✅ Design ✅ Three Amigos next
 
 ---
 
@@ -79,11 +79,30 @@ Location: `~/Documents/Conductor Plugin/`
 - Backlog: Stage 1 scope → CLAUDE.md, full now/next/later → HANDOFF.md, backlog file only if Later > 3 items
 - Enforcement: conductor holds at scope gate, proposes the cut, will not advance until a stage is approved
 
-### Design ⬅ next
+### Design ✅
+- Loop: make → review → refine → approve
+- Art direction runs before first iteration if visual identity undefined
+- Tool selection: A) Interface generator prompt (Figma Make recommended, also Lovable/Bolt/Claude) — best speed/quality ratio, fine-tune directly, push to GitHub; B) HTML prototype — runs locally in browser/Cursor, use for quick validation or backend-heavy work; C) MCP canvas — real-time canvas editing, requires canvas open before starting
+- figma-make-prompt-generator skill to be generalized later — prompt should work across all AI interface generators
+- Three review questions: R1 Coverage, R2 Hard blockers only (feasibility debates deferred to Three Amigos), R3 User clarity
+- R2 boundary rule: "flag only hard blockers, defer everything else to Three Amigos" — conductor enforces this explicitly
+- Three Amigos agenda built during Design — R2 soft concerns go on it automatically
+- Enforcement: known hard blocker = loop runs again, not a Three Amigos question
+
+### Three Amigos ⬅ next
 
 ## Where we stopped
 
-Specify drilled and locked. Moving to Design phase drill.
+Design drilled and locked. Session ended here due to context length.
+
+## How to resume
+
+Start a new Claude Code session from `~/Documents/Conductor V2/`.
+Say: "Resume Conductor V2 design session. Read HANDOFF.md and CONCEPT.md."
+Next phase to drill: Three Amigos gate.
+
+After Three Amigos: Build loop, Ship gate.
+Then: write conductor SKILL.md, review individual skill files, resolve embedded vs triggered vs referenced.
 
 ---
 
