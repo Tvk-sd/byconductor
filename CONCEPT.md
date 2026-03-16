@@ -22,16 +22,22 @@ The second problem: V1 optimizes for producing artifacts (PRD, design, code) rat
 Every piece of product work starts with an opportunity. The V2 conductor doesn't ask "which phase are you in?" It asks "do you have a real opportunity, or are we still finding one?"
 
 ```
-SCOPE ZERO    Is there a real opportunity here?
+SCOPE ZERO        Gate — is there a real opportunity here?
       ↓
-SPECIFY       What exactly are we solving, for whom?
+SPECIFY           Gate — what exactly are we solving, for whom?
       ↓
-DESIGN        What does it look like?
+DESIGN            Loop — make → review → refine → approve
       ↓
-BUILD         Make it.
+THREE AMIGOS      Gate — PM + design + build alignment, contract written
       ↓
-SHIP          Get it out and communicate it.
+BUILD             Loop — plan → build → review → approve
+      ↓
+SHIP              Gate — deploy, communicate, handoff
 ```
+
+Six moments. Two loops. Four gates.
+
+Gates move in one direction only — you cannot re-enter a previous gate without a conductor-enforced checkpoint. Loops iterate in place until exit conditions are met.
 
 Scope Zero is not a phase — it is an entry condition. You cannot enter Specify without a one-sentence outcome and a framed opportunity. Everything downstream has a validated reason to exist.
 
@@ -44,6 +50,33 @@ An AI-enabled PM. Comfortable using Claude. Not someone who has memorized 24 ski
 Not: the Claude power user who lives in the terminal.
 Not: the non-technical PM who wants a chatbot.
 Yes: the senior PM who wants a system that thinks like they do.
+
+---
+
+## Phase principles
+
+### Gates
+Linear. One direction. Require explicit human approval to exit. The conductor will not advance past a gate without confirmation.
+
+### Loops
+Iterative. Stay in phase until exit condition is met. Design and Build are both loops — this is intentional. Design thinking (think → make → test) and lean build (plan → build → review) are both cyclical by nature.
+
+### The Design → Build boundary
+Design changes after Build starts = new Design phase + new Three Amigos checkpoint before any code changes. The conductor enforces this. The Three Amigos gate writes a locked design contract to CLAUDE.md. Build is held against that contract.
+
+### Research fork (in Scope Zero)
+When the opportunity is unclear and external signal is needed, the conductor surfaces this explicitly — it does not attempt research inline. It says: "You need a research session before continuing. Run /research as a separate session. Bring the output back here." Session pauses, HANDOFF.md is updated. Research is a different agent, a different session, a different job.
+
+### Design options
+Design is always offered, never skipped by default. Three paths:
+
+| Option | When |
+|---|---|
+| Figma Make | Design quality matters — use figma-make-prompt-generator |
+| HTML prototype | Fastest validation — built directly, runs in browser |
+| MCP canvas | Claude reads/writes Paper or Figma directly |
+
+Skipping requires an explicit choice, not an absent one.
 
 ---
 

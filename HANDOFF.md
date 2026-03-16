@@ -15,6 +15,14 @@ A redesign of the PM OS conductor logic (V1: `~/Documents/Conductor Plugin`). Th
 
 | Decision | Detail | Reason |
 |---|---|---|
+| Phase structure | 6 moments: Scope Zero, Specify, Design, Three Amigos, Build, Ship | Maps to OST + design thinking + lean build |
+| Gates vs loops | Gates (4) are linear, Loops (2) iterate in place | Design and Build are inherently cyclical |
+| Design is a loop | make → review → refine → approve | Lean UX / design thinking principle |
+| Three Amigos gate | Between Design and Build | PM + design + build alignment before code starts |
+| Design lock | Changes after Build starts = new Design phase + new checkpoint | Prevents "design in code" drift |
+| Research fork | Scope Zero surfaces need, pauses session, routes to /research | Research is a different agent/session, not inline |
+| Design options | Figma Make / HTML prototype / MCP canvas — always offered, explicitly skippable | Cheapest to most polished, all valid |
+|---|---|---|
 | Plugin structure | Keep V1 plugin structure | Works, no reason to change |
 | Skills | All 23 unchanged | Leaf skills are working as designed |
 | Entry point | Scope Zero replaces direct phase entry | V1 assumes a scoped problem; most sessions start fuzzy |
@@ -52,7 +60,9 @@ Location: `~/Documents/Conductor Plugin/`
 
 ## Where we stopped
 
-Designed the concept. Next: map the phase structure.
+Phase structure locked. Next: drill into individual phases.
+
+Starting with Scope Zero — exit conditions, exact skill sequence, what gets written.
 
 Specifically:
 1. Exact phases and their exit conditions
