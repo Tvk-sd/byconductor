@@ -1,7 +1,7 @@
 # Conductor V2 — Handoff
 
 Last updated: 2026-03-16
-Status: Design phase — phase structure next
+Status: Drilling phases — Scope Zero ✅ Specify ✅ Design next
 
 ---
 
@@ -15,6 +15,11 @@ A redesign of the PM OS conductor logic (V1: `~/Documents/Conductor Plugin`). Th
 
 | Decision | Detail | Reason |
 |---|---|---|
+| Scope estimation | Claude estimates and proposes, human approves the cut | Humans are bad at estimation — story points prove it |
+| Vertical slices | Every stage must include frontend + backend together | Click-dummy is the minimum testable surface per slice |
+| Backlog routing | Simple builds: conductor estimates inline. Complex: route to /plan | Weaves compound-engineering into the flow naturally |
+| Fork B language | "Prototype, not a validated product" not "spike" | More natural to PM vocabulary |
+| Q3 open prompt | After Q3 in every phase: "Anything else to establish?" | Gives user agency without forcing more questions |
 | Phase structure | 6 moments: Scope Zero, Specify, Design, Three Amigos, Build, Ship | Maps to OST + design thinking + lean build |
 | Gates vs loops | Gates (4) are linear, Loops (2) iterate in place | Design and Build are inherently cyclical |
 | Design is a loop | make → review → refine → approve | Lean UX / design thinking principle |
@@ -58,23 +63,33 @@ Location: `~/Documents/Conductor Plugin/`
 
 ---
 
+## Phase drill log
+
+### Scope Zero ✅
+- Three question sequence (job → signal → outcome) + open prompt
+- Research fork lives at Q2: Option A = /research separate session, Option B = proceed as prototype [UNVALIDATED]
+- OST skills called conditionally: jtbd-analysis, ost-exploration, ost-evidence, pm-thinking-partner
+- Enforcement: one soft check if Scope Zero skipped, respects autonomy but flags it
+
+### Specify ✅
+- Three question sequence (user → scope → done) + open prompt
+- Scope gate: Claude estimates size, proposes now/next/later staging, human approves the cut
+- Vertical slice rule: no stage separates frontend from backend — each slice has a frontend face + backend body + testable surface (click-dummy minimum)
+- Complex builds route to compound-engineering:workflows:plan before Design
+- Backlog: Stage 1 scope → CLAUDE.md, full now/next/later → HANDOFF.md, backlog file only if Later > 3 items
+- Enforcement: conductor holds at scope gate, proposes the cut, will not advance until a stage is approved
+
+### Design ⬅ next
+
 ## Where we stopped
 
-Phase structure locked. Next: drill into individual phases.
-
-Starting with Scope Zero — exit conditions, exact skill sequence, what gets written.
-
-Specifically:
-1. Exact phases and their exit conditions
-2. Which skills each phase calls and in what order
-3. What the human checkpoint looks like per phase
-4. What the conductor writes to CLAUDE.md and HANDOFF.md at each boundary
+Specify drilled and locked. Moving to Design phase drill.
 
 ---
 
 ## Open questions
 
-- Does the `/research` conductor from V1 survive as-is, or get folded into Scope Zero?
-- Does Design phase remain mandatory or become optional (e.g. for non-UI work)?
+- `/research` from V1 confirmed as separate session/agent — survives as-is, referenced from Scope Zero fork
+- Design confirmed as always-offered, explicitly skippable — three options: Figma Make / HTML / MCP canvas
 - V1 landing page: update in place or wait until V2 conductor is built?
 - CTA decision still pending from V1: Tally waitlist / GitHub / email?
