@@ -140,17 +140,58 @@ Location: `~/Documents/Conductor Plugin/`
 
 ---
 
+## Skill resolution map
+
+Mapped against `commands/conductor.md` — 2026-03-17.
+
+| Skill | Status | Where |
+|---|---|---|
+| `jtbd-analysis` | Triggered | Scope Zero — fuzzy job |
+| `ost-exploration` | Triggered | Scope Zero — no signal |
+| `ost-evidence` | Triggered | Scope Zero — signal exists |
+| `pm-thinking-partner` | Triggered | Scope Zero — strategic framing |
+| `art-direction` | Triggered | Design — visual identity undefined |
+| `figma-make-prompt-generator` | Triggered | Design — Path A |
+| `stakeholder-communication` | Triggered | Ship — Path D |
+| `launch-planning` | Triggered | Ship — Path D |
+| `engineering:deploy-checklist` | Triggered | Ship — Path A |
+| `draft-content` | Triggered (marketing plugin) | Ship — Path D |
+| `compound-engineering:workflows:plan` | Triggered | Specify — complex builds |
+| `prd-writing` | Standalone only — decision pending | Was in V1 Specify — replaced by conductor questions |
+| `concept-brief` | Standalone only — decision pending | Was in V1 Specify — replaced by CONCEPT.md |
+| `metrics-definition` | Standalone only — decision pending | Was in V1 Specify |
+| `user-story-creation` | Standalone only — decision pending | Possible fit in Three Amigos |
+| `project-handoff` | Standalone only — decision pending | Replaced by three-file pattern |
+| `ui-ux-pro-max` | Standalone only — decision pending | Was in V1 Design |
+| `workflow-documentation` | Standalone only — decision pending | Possible Ship Path C |
+| `brainstorming-ideation` | Standalone only | No conductor fit identified |
+| `feature-prioritisation` | Standalone only | No conductor fit identified |
+| `competitor-analysis` | Standalone only | No conductor fit identified |
+| `ai-decision-framework` | Standalone only | No conductor fit identified |
+| `ai-feature-scoping` | Standalone only | No conductor fit identified |
+| `ai-market-research` | Standalone only | No conductor fit identified |
+| `build-workflow` | Superseded | Replaced by conductor |
+| `user-research-synthesis` | Standalone only | No conductor fit identified |
+
+**Pending decisions (next session):**
+- `prd-writing` / `concept-brief` / `metrics-definition` — trigger anywhere in V2 or standalone-only?
+- `user-story-creation` — trigger in Three Amigos UML step, or too much overlap?
+- `ui-ux-pro-max` — trigger in Design, or retired from conductor?
+- `project-handoff` — fully replaced by three-file pattern, or still useful standalone?
+
+---
+
 ## Where we stopped
 
-All six phases drilled and locked. Session ended here.
+All six phases drilled. `commands/conductor.md` written. Skill resolution map complete — 4 decisions pending.
 
 ## How to resume
 
 Start a new Claude Code session from `~/Documents/Conductor V2/`.
 Say: "Resume Conductor V2 design session. Read HANDOFF.md and CONCEPT.md."
-Next: write `commands/conductor.md` SKILL.md.
+Next: resolve the 4 pending skill decisions (see Skill resolution map above).
 
-After conductor.md: review individual V1 skill files, resolve embedded vs triggered vs referenced.
+After skill decisions: update `CLAUDE.md` V2 trigger phrases and routing logic, then V1 landing page decision.
 
 ---
 
