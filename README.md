@@ -13,14 +13,14 @@ Built for senior PMs and technical builders who want a system, not just prompts.
 
 **23 Skills** — triggered by natural language phrases:
 
-| Category | Skills |
+| Conductor phase | Skills |
 |---|---|
-| Strategy | Concept brief, JTBD analysis, OST (evidence + exploration), AI decision framework |
-| Specification | PRD writing, user stories, feature prioritisation, metrics definition, AI feature scoping |
-| Research | User research synthesis, competitor analysis, AI market research |
-| Execution | Launch planning, workflow documentation, project handoff, build workflow, stakeholder communication |
-| Design | UI/UX direction, art direction, Figma Make prompt generator |
-| AI | PM thinking partner, brainstorming |
+| Scope Zero | Concept brief, JTBD analysis, OST (evidence + exploration), AI decision framework, PM thinking partner, Competitor analysis, AI market research, Brainstorming |
+| Specify | PRD writing, User stories, Metrics definition, Feature prioritisation, AI feature scoping |
+| Design | UI/UX direction, Art direction, Figma Make prompt generator |
+| Three Amigos | Stakeholder communication, Workflow documentation |
+| Build | Build workflow |
+| Ship | Launch planning, Project handoff |
 
 ---
 
