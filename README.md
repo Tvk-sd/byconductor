@@ -48,6 +48,21 @@ Run the conductor:
 /conductor a user onboarding flow for a B2B SaaS product
 ```
 
+What you see:
+```
+Conductor session: User onboarding flow
+
+Path I'll run:
+  1. Scope Zero    — frame the opportunity
+  2. Specify       — scope, slices, staging
+  3. Design        — prototype or mockup
+  4. Three Amigos  — alignment before code
+  5. Build         — feature by feature
+  6. Ship          — deliver and handoff
+
+Any phases to skip? Or shall I start?
+```
+
 Trigger a skill by phrase:
 ```
 Write a PRD for the notifications feature
@@ -61,7 +76,7 @@ Think through this with me — I'm trying to decide if we should...
 
 ```
 byconductor/
-├── commands/     Conductor scripts (/conductor, /build, /research)
+├── commands/     Conductor script (/conductor)
 ├── skills/       23 PM skill folders
 └── CLAUDE.md     Plugin manifest — loaded by Claude Code on install
 ```
