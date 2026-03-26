@@ -1,3 +1,9 @@
+---
+version: 1.0.0
+name: figma-make-prompt-generator
+description: Translates a design brief into a ready-to-paste Figma Make prompt (TC-EBC format). Fights Figma Make's default aesthetic bias. Triggers: "generate a Figma Make prompt", "turn this brief into a Figma prompt", "make this Figma Make ready", "create a Figma Make prompt for", "Figma Make prompt".
+---
+
 # Figma Make Prompt Generator — Claude Skill
 
 **Trigger phrases:** "generate a Figma Make prompt", "turn this brief into a Figma prompt",
@@ -218,6 +224,13 @@ Figma Make Prompt Generator Skill  ←  you are here
 | Scroll-triggered animations | GSAP ScrollTrigger |
 | Live data (clocks, counters) | Vanilla JS setInterval |
 | Font subsetting or preloading | Manual WOFF2 + `<link rel="preload">` |
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

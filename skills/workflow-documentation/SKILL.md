@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: workflow-documentation
-description: Create comprehensive, living process documentation that people will actually follow — including exception handling, handoff protocols, and review triggers. Use when the user needs to document a workflow, process, or operational procedure. Trigger phrases include: "document this process", "write a workflow", "process documentation", "how should we document this", "create a runbook".
+description: Documents real-world processes: step-by-step, exception handling, handoffs, review triggers. Captures how it actually works, not how it should. Triggers: "document this process", "write a workflow", "process documentation", "document how this works", "create a process doc", "we need a runbook", "document this procedure", "how do we document our process".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -47,7 +48,7 @@ For each step:
 
 ### 3. Exception Handling
 
-Document the top 5 most common exceptions or edge cases:
+Document every exception that has actually caused a breakdown, delay, or confusion. There is no target count — as few or as many as genuinely exist:
 - What triggers the exception
 - Who owns the resolution
 - Escalation path if resolution fails
@@ -68,10 +69,28 @@ For each role transition:
 
 ## Constraints
 
-- Document the process as it SHOULD work, but call out where current reality deviates
+- Document the process as it ACTUALLY works today. If an aspirational version exists, add it as a separate "Target State" section — never blend the two
 - Flag inefficiencies and unnecessary steps with `[OPTIMISATION OPPORTUNITY]`
 - Every step must have a clear owner — if ownership is ambiguous, flag it as a problem
 - Write for someone new to this process — no assumed knowledge or undefined tribal terminology
+
+---
+
+## File output
+
+After producing the final output, save it as a markdown file in the current working directory:
+
+```
+Filename: [project-slug]-WORKFLOW.md
+```
+
+If no project slug is evident from context, ask the user for one before saving. Confirm the save with: `Saved: [filename]`
+
+---
+
+## Gotchas
+
+- **Documenting how it should work instead of how it actually works is the most common failure.** Before writing anything, ask: "Is this how the process works today, or how you want it to work?" If the answer is "how we want it to work", stop — document reality first, then add a Target State section separately.
 
 ---
 

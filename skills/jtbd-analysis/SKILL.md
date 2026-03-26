@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: jtbd-analysis
-description: Analyse customer data using the Jobs to be Done framework — identifying functional, emotional, and social jobs, desired outcomes, four forces, and overserved/underserved opportunities. Use when the user has customer data and needs to understand what customers are actually trying to accomplish. Trigger phrases include: "JTBD analysis", "jobs to be done", "what job are customers hiring us for", "understand customer motivations", "analyse customer jobs".
+description: Maps customer jobs (functional, emotional, social), desired outcomes, four forces, overserved/underserved opportunities from research data. Triggers: "JTBD", "jobs to be done", "what job are customers hiring us for", "understand customer motivations", "why do customers use this", "what's the underlying need", "analyse customer jobs", "customer job analysis".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -60,6 +61,25 @@ Recommend where to focus product investment based on underserved and unserved ou
 - Every job and outcome must trace back to specific evidence; mark inferences without direct support as `[INFERRED]`
 - Do not conflate solutions with jobs: "I want a better dashboard" is a solution; the job is "quickly assess business health without manual data gathering"
 - If data is insufficient for confident JTBD analysis, say what additional research is needed rather than fabricating insights
+
+---
+
+## File output
+
+After producing the final output, save it as a markdown file in the current working directory:
+
+```
+Filename: [project-slug]-JTBD.md
+```
+
+If no project slug is evident from context, ask the user for one before saving. Confirm the save with: `Saved: [filename]`
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

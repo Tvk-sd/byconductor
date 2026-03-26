@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: ost-evidence
-description: Build an Opportunity Solution Tree from real customer discovery data following Teresa Torres' Continuous Discovery framework. Every branch must trace to evidence — no fabricated opportunities. Use when you have interview transcripts, research data, analytics, or feedback logs. Trigger phrases include: "build an OST", "opportunity solution tree from my research", "map opportunities", "structure my discovery data", "OST from interviews", "continuous discovery tree".
+description: Builds an Opportunity Solution Tree from real discovery data — every branch traces to evidence, no fabrication. Triggers: "build an OST", "opportunity solution tree", "OST from my research", "map opportunities from data", "structure my discovery", "OST from interviews", "continuous discovery". Requires actual data — if data is thin, use ost-exploration.
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -122,6 +123,13 @@ Save the completed OST (Mermaid diagram + full prose analysis) as `[project-slug
 Confirm save with: `Saved: [filename]`
 
 Display the full document inline after saving.
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

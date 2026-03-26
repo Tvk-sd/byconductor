@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: ai-decision-framework
-description: Facilitate a structured decision process for whether and how to apply AI to a product problem. Runs as a conversational 6-step session ending in a stakeholder-ready decision brief. Use when evaluating an AI feature idea, scoping AI investment, or needing to justify or challenge an AI decision to stakeholders. Trigger phrases include: "should we use AI for", "evaluate this AI idea", "AI decision", "is this worth building with AI", "help me think through this AI feature", "AI or not".
+description: 6-step AI investment decision ending in a stakeholder-ready brief. Triggers: "should we use AI for this", "is this worth building with AI", "evaluate this AI idea", "AI or not", "help me justify this AI feature", "AI decision", "AI feasibility", "should we build this with AI".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -121,6 +122,25 @@ After all steps, produce:
 **Success Metrics** — table with baseline, target, timeline
 **Ethical Flags** — bulleted, prioritised
 **Recommendation** — Build / Validate further / Don't build + one sentence rationale
+
+---
+
+## File output
+
+After producing the final output, save it as a markdown file in the current working directory:
+
+```
+Filename: [project-slug]-AI-DECISION.md
+```
+
+If no project slug is evident from context, ask the user for one before saving. Confirm the save with: `Saved: [filename]`
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: prd-writing
-description: Write a structured, stakeholder-ready PRD using a two-phase approach — strategic questioning first, then structured drafting. Use when the user needs to write a PRD, product brief, or feature spec. Trigger phrases include: "write a PRD", "help me draft a spec", "product requirements", "feature brief", "write up this feature".
+description: Two-phase PRD: strategic challenge first, then structured draft. Flags assumptions and missing input inline. Triggers: "write a PRD", "help me draft a spec", "product requirements", "feature brief", "write up this feature", "write a product spec", "I need a PRD for", "spec this out", "document this feature".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -56,6 +57,25 @@ For each section:
 - Scope must list what's OUT explicitly, not just what's in
 - Never fill generic content when context is missing — tell the user what's needed
 - Every risk needs a mitigation or explicit ask for help
+
+---
+
+## File output
+
+After producing the final output, save it as a markdown file in the current working directory:
+
+```
+Filename: [project-slug]-PRD.md
+```
+
+If no project slug is evident from context, ask the user for one before saving. Confirm the save with: `Saved: [filename]`
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

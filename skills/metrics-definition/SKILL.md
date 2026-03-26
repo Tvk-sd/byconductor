@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: metrics-definition
-description: Define success metrics, KPIs, and measurement plans for products, features, and initiatives. Use when the user needs to choose the right metrics, set targets, design a measurement framework, write a success criteria section, or evaluate whether a metric is the right one. Trigger phrases include: "define success metrics", "what should we measure", "KPIs for this feature", "success criteria", "measurement plan", "how do we know if this worked", "north star metric", "OKRs", "metrics framework", "tracking plan".
+description: Defines north star, input metrics, success criteria, targets, measurement plan, and anti-metrics (what NOT to measure). Triggers: "define success metrics", "what should we measure", "KPIs for this", "success criteria", "measurement plan", "how do we know if this worked", "north star metric", "OKRs", "metrics framework", "tracking plan", "how do we measure success".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -136,6 +137,25 @@ Structured block ready to paste into a PRD:
 - Vanity metrics (page views, registered users, raw downloads) are only acceptable as context, not as success criteria.
 - If the team has no analytics infrastructure for a proposed metric, flag it as a gap, not just a nice-to-have.
 - Do not define more than one primary metric per feature or initiative. If the user insists on two, they are describing two different goals.
+
+---
+
+## File output
+
+After producing the final output, save it as a markdown file in the current working directory:
+
+```
+Filename: [project-slug]-METRICS.md
+```
+
+If no project slug is evident from context, ask the user for one before saving. Confirm the save with: `Saved: [filename]`
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

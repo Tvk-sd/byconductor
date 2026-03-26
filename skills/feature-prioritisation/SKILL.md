@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: feature-prioritisation
-description: Prioritise a feature backlog or set of initiatives using structured frameworks. Use when the user needs to stack-rank features, decide what to cut or defer, build a scoring model, or make a defensible prioritisation call. Trigger phrases include: "prioritise this backlog", "help me prioritise", "what should we build first", "stack rank these features", "RICE scoring", "MoSCoW", "prioritisation framework", "what do we cut", "help me decide what to build".
+description: Stack-ranks features using RICE, MoSCoW, or Now-Next-Later with stress testing. Triggers: "prioritise this backlog", "help me prioritise", "what should we build first", "stack rank these", "RICE scoring", "MoSCoW", "what do we cut", "help me decide", "prioritisation framework", "which features matter most", "what's the priority here".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -117,6 +118,25 @@ Four-quadrant view with brief rationale for each item's placement. Include expli
 - Do not default to RICE just because it is popular. Match the framework to the decision type.
 - Deferral is a decision. Every item in Won't Have / Later needs a condition for revisit, not just a parking space.
 - If the backlog has more than 15 items, recommend a first-pass cull (obvious nos) before applying a scoring model.
+
+---
+
+## File output
+
+After producing the final output, save it as a markdown file in the current working directory:
+
+```
+Filename: [project-slug]-PRIORITIES.md
+```
+
+If no project slug is evident from context, ask the user for one before saving. Confirm the save with: `Saved: [filename]`
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

@@ -1,9 +1,10 @@
 ---
+version: 1.0.0
 name: ai-market-research
-description: Use this skill for any task involving market research, competitive discovery, user sentiment analysis, trend detection, or research planning. Diagnoses which research phase the user is in, selects the right tool, and produces a sequenced Research Brief. If raw data is provided, synthesizes it directly. Trigger phrases include: "research X market", "find out what users think about", "what do people say about", "monitor X over time", "market research plan", "research this space".
+description: Research planning, competitive discovery, user sentiment, trend detection. Triggers: "research X market", "what do people think about", "what's the sentiment on", "monitor X over time", "market research plan", "research this space", "find out what users say", "competitive discovery". For synthesising raw data already collected, use user-research-synthesis.
 ---
 
-This skill diagnoses where you are in a research workflow and produces a concrete **Research Brief** — phase, tool stack, and sequenced action plan. If the user brings raw data (transcripts, scraped output, PDFs), synthesize it directly without a brief.
+This skill diagnoses where you are in a research workflow and produces a concrete **Research Brief** — phase, tool stack, and sequenced action plan. If the user brings raw data (transcripts, scraped output, PDFs), route to `user-research-synthesis` instead — that skill is purpose-built for synthesis and produces richer, quote-grounded output.
 
 ---
 
@@ -191,7 +192,7 @@ When this skill runs without raw data provided, produce:
 3. **Sequenced action plan** — numbered steps in order (what to run first, what to do with the output, what comes next)
 4. **Scraping setup** (if Phase 2 applies) — which Option (A/B/C/D) fits, and the exact ask to give Claude Code
 
-If raw data is provided, skip the brief and synthesize directly: themes, representative quotes, JTBD implications, and 3 prioritized product or strategic actions.
+If raw data is provided (transcripts, scraped output, PDFs), do not synthesize here. Route to `user-research-synthesis` instead — it produces contradiction mapping, evidence citation, and quote-grounded output.
 
 ---
 
@@ -225,6 +226,13 @@ Claude Code pipeline (weekly Reddit/HN scrape) → structured CSV → Claude Pro
 
 **Fast one-off competitive snapshot**
 Perplexity → paste competitor pages into Claude chat → JTBD and gap analysis output
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: user-research-synthesis
-description: Synthesise user research data (interviews, surveys, feedback logs) into prioritised, evidence-grounded product insights. Use when the user has raw research data and needs themes, patterns, contradictions, and product implications. Trigger phrases include: "synthesise my research", "analyse these interviews", "what does this research tell us", "find patterns in this feedback", "research synthesis".
+description: Synthesises interviews, surveys, feedback logs into themes, patterns, contradictions, and product implications — not summaries. Triggers: "synthesise my research", "analyse these interviews", "what does this research tell us", "find patterns in this feedback", "research synthesis", "what are users saying", "analyse this feedback", "make sense of these interviews".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -56,6 +57,13 @@ Save the completed synthesis as `[project-slug]-RESEARCH.md` in the current work
 Confirm save with: `Saved: [filename]`
 
 Display the full document inline after saving.
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

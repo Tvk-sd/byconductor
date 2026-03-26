@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: user-story-creation
-description: Generate implementation-ready user stories with acceptance criteria, edge cases, and complexity estimates. Use when the user needs to write user stories, acceptance criteria, or break down a feature for engineering. Trigger phrases include: "write user stories", "break this into stories", "acceptance criteria", "story map", "tickets for this feature".
+description: Generates implementation-ready user stories with Given/When/Then ACs, edge cases, complexity estimates. Triggers: "write user stories", "break this into stories", "acceptance criteria", "story map", "tickets for this feature", "break this feature into tickets", "user stories for", "write ACs for this", "engineering tickets".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -53,6 +54,25 @@ Prioritise each group: Must / Should / Could
 - Each story must be independently deliverable and testable
 - If a story is too large for a single sprint, flag it and suggest how to split
 - Do not generate stories for functionality not described — instead, list gaps under "Suggested additions"
+
+---
+
+## File output
+
+After producing the final output, save it as a markdown file in the current working directory:
+
+```
+Filename: [project-slug]-STORIES.md
+```
+
+If no project slug is evident from context, ask the user for one before saving. Confirm the save with: `Saved: [filename]`
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

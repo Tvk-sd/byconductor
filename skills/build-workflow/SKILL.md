@@ -1,11 +1,27 @@
 ---
+version: 1.0.0
 name: build-workflow
-description: Human-in-the-loop build workflow for PMs using Claude Code. Maps every phase (Discover → Specify → Design → Build → Review → Ship) to the right skills, MCPs, and agent patterns. Includes parallel agent setup for building multiple features simultaneously. Trigger phrases: "how do I build this", "start a build", "what skill should I use", "parallel build", "run agents in parallel".
+description: PM build workflow — maps Discover → Specify → Design → Build → Review → Ship to the right skills and MCPs. Triggers: "what skill should I use for", "run agents in parallel", "parallel build", "which skill should I use", "what's the build process", "map this to a skill", "how do I use Claude Code for this".
 ---
 
 # Human-in-the-Loop Build Workflow
 
 A complete map of skills, MCPs, and agent patterns for building products with Claude Code — with you as the decision-maker at every handoff.
+
+---
+
+## Scope Gate — Run This First
+
+Before entering any phase, answer:
+
+**Is this a prototype / script / single-file tool, or a real product feature with stakeholders?**
+
+| Type | Path |
+|---|---|
+| Prototype, script, or single-file tool | Skip Discover, Specify, and Design. Go straight to Build. Document after it works. |
+| Real product feature with stakeholders | Run the full 6-phase loop below. |
+
+If unsure, ask: "Will anyone other than you use this, or does it need to survive beyond this session?" If no → prototype path.
 
 ---
 
@@ -120,7 +136,7 @@ Each phase ends with a human checkpoint (🟠). Claude presents output. You appr
 | Granola MCP | Pull context from meeting notes automatically |
 | Notion MCP | Capture output to Notion |
 
-→ **Your checkpoint:** Agree on the problem and target outcome.
+→ **Your checkpoint:** Agree on the problem and target outcome. Value check: Can you state the problem in one sentence?
 
 ---
 
@@ -136,7 +152,7 @@ Each phase ends with a human checkpoint (🟠). Claude presents output. You appr
 | `ai-feature-scoping` | "scope this AI feature" |
 | Notion MCP | Store spec in Notion |
 
-→ **Your checkpoint:** Approve the PRD and metrics. Do not proceed to design without this.
+→ **Your checkpoint:** Approve the PRD and metrics. Value check: Does the scope fit one build session? Do not proceed to design without this.
 
 ---
 
@@ -151,7 +167,19 @@ Each phase ends with a human checkpoint (🟠). Claude presents output. You appr
 | Paper MCP | Claude reads/writes your Paper canvas directly |
 | Figma MCP | Claude reads Figma designs |
 
-→ **Your checkpoint:** Approve the design in Paper before Claude writes code.
+→ **Your checkpoint:** Approve the design in Paper before Claude writes code. Value check: Does the design open and render correctly?
+
+---
+
+### Fork Protocol — Before Build Begins
+
+If an unplanned task appears mid-session (a bug surfaces, a new requirement emerges, a dependency is missing):
+
+- Do not execute it inline.
+- Either: add it to the plan as a discrete task with its own checkpoint, then continue the current task to completion before starting it.
+- Or: open a second terminal (new Claude session) and work on it in parallel.
+
+Inline detours are the primary cause of sessions that produce artifacts but no working output.
 
 ---
 
@@ -167,7 +195,7 @@ Each phase ends with a human checkpoint (🟠). Claude presents output. You appr
 | Context7 MCP | Live library docs — always active |
 | 21st.dev Magic MCP | Fetches polished UI components on demand |
 
-→ **Your checkpoints:** Approve the build plan first. Review after each discrete feature. Never batch.
+→ **Your checkpoints:** Approve the build plan first. Review after each discrete feature. Value check: Does it run in a browser / execute without errors? Never batch.
 
 ---
 
@@ -248,6 +276,13 @@ The two highest-value checkpoints:
 2. **Design approval in Paper** — prevents expensive code rework
 
 Never let Claude move from design to build, or from plan to code, without explicit confirmation from you.
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

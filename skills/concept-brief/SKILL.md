@@ -1,6 +1,7 @@
 ---
+version: 1.1.0
 name: concept-brief
-description: Write a concise, voice-forward concept brief for a project — a human-readable direction document that captures what it is, what it believes, and who it's for. Saves as CONCEPT.md in the working directory. Use before writing a PRD or starting a build. Trigger phrases include: "concept brief", "write a concept brief", "vision brief", "direction brief", "project brief", "write up the vision", "create a concept doc".
+description: Writes a voice-forward concept brief (~300 words): what it is, what it believes, who it's for. Saves as CONCEPT.md. Reads ARTDIRECTION.md if present. Use before PRD or build. Triggers: "concept brief", "write a concept brief", "vision brief", "direction brief", "write up the vision", "project brief", "what is this thing", "summarise the vision", "capture the concept".
 ---
 
 **Before starting:** state your understanding of the project in one sentence and ask up to 2 clarifying questions if the input is ambiguous. Wait for confirmation before drafting.
@@ -25,6 +26,8 @@ Ask for (if not already provided):
 - Who it's for (be specific — not "users", a real person in a real situation)
 - The central problem it solves
 - Any notes on positioning, voice, or brand (optional but welcomed)
+
+Before drafting, automatically check the current working directory for a file matching `*-ARTDIRECTION.md`. If found, read it — it will inform the Visual identity section. No user action needed.
 
 ---
 
@@ -52,6 +55,14 @@ Avoid job titles unless they carry real meaning.
 ### 5. What success looks like
 3 concrete outcomes. Not KPIs — human outcomes. What changes for this person? What becomes possible that wasn't before?
 
+### 6. Visual identity (conditional)
+
+Only include this section if a `*-ARTDIRECTION.md` file exists in the current working directory.
+
+If found: read it and write 3–5 sentences covering the dominant color register, typographic personality, imagery tone, and overall feel. Write as prose — this is a direction summary, not a design spec. End with a reference line: `Full art direction: [filename]`
+
+If not found: omit this section entirely. No placeholder, no mention.
+
 ---
 
 ## Voice rules
@@ -77,6 +88,13 @@ Save it in the current working directory using the Write tool.
 Confirm the save with: `Saved: [filename]`
 
 Then display the full document inline so the user can read and react without opening the file.
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

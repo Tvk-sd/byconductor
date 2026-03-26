@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: art-direction
-description: Define, brief, or critique visual identity and art direction for brands, campaigns, and assets. Use when the user needs to establish a visual language, brief a designer or agency, art direct a campaign, create a moodboard brief, evaluate visual consistency, or document brand design principles. Trigger phrases include: "art direction", "visual identity", "brand design", "moodboard", "creative brief", "visual language", "art direct this", "brand look and feel", "visual brand", "design brief", "brand guidelines visual".
+description: Visual identity, brand design, art direction, creative briefs. Triggers: "art direction", "visual identity", "brand design", "moodboard", "creative brief", "visual language", "art direct this", "brand look and feel", "design brief", "what should this look like", "brand guidelines visual", "how should this feel visually", "establish a visual language".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -13,6 +14,17 @@ Adapt your output based on what the user needs:
 - **Art directing a campaign or asset** → concept + execution notes
 - **Critiquing visual work** → scored evaluation against stated principles
 - **Building a moodboard brief** → reference directions with rationale
+
+---
+
+## Invoked from design-analysis
+
+If a design spec (from the design-analysis skill) is present in the conversation:
+- Skip the Required inputs section — the spec is the brief
+- Skip upfront clarifying questions — the visual direction is already established
+- Proceed directly to Phase 1, treating the spec palette, typography, and layout as the established visual territory
+- Phase 1 should document the *rationale and concept* behind those decisions, not re-derive them
+- Phase 2 should translate the spec into identity principles, not repeat the spec
 
 ---
 
@@ -151,11 +163,52 @@ Overall verdict: Approve / Revise / Rethink — with one clear priority action.
 
 ## File output
 
-Save the completed output (creative brief, visual identity principles, campaign concept, or critique) as `[project-slug]-ARTDIRECTION.md` in the current working directory.
+After producing the final output, save it as a markdown file in the current working directory:
 
-Confirm save with: `Saved: [filename]`
+```
+Filename: [project-slug]-ARTDIRECTION.md
+```
+
+If no project slug is evident from context, ask the user for one before saving. Confirm the save with: `Saved: [filename]`
 
 Display the full document inline after saving.
+
+### Quick reference card (required)
+
+Every art direction document output must end with a `## Quick Reference Card` section. This section contains a single fenced code block listing all design tokens in one place, so a future AI session can extract every token in a single pass without re-reading the full document.
+
+The block must include:
+- All colors: name/role, hex value, and light/dark variants where applicable
+- All typefaces: name (with weight) and their role
+- Key type sizes: size range, leading, alignment, and any notable treatment
+
+Format example:
+
+```
+Background:   #F2F2F2     Dark bg:     #0A0A0A
+Text:         #0D0D0D     Dark text:   #E8E8E8
+Teal:         #5BB5A2     Dark lines:  #4A7BB5
+Coral:        #E8614A     Dark accent: #D4A030
+
+Display:      Syne Bold (700)
+Body:         Inter (400)
+Mono:         IBM Plex Mono (400)
+Editorial:    Cormorant Garamond Italic
+
+Hero:         80–120px / leading 0.9 / left-aligned / stacked list
+Section:      40px / leading 1.0
+Body:         16–18px / leading 1.5
+Mono:         13–14px
+```
+
+Do not summarise or describe the tokens in prose — list them directly in the code block. This section must appear after all other content and before the end of the file.
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

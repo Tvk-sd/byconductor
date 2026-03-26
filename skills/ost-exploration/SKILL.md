@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: ost-exploration
-description: Build an Opportunity Solution Tree in assumption and generative extension mode — for when discovery data is thin, missing, or when you want to expand the solution space before converging. Uses Occam's razor for hypothesis selection and explicit [SPECULATIVE] labeling for generative extensions and analog imports. Different from ost-evidence: this mode explores and generates rather than synthesises existing data. Trigger phrases include: "explore opportunity space", "OST without data", "assumption-based OST", "generative OST", "what opportunities might exist", "build an OST from scratch", "discovery is early".
+description: Builds an Opportunity Solution Tree in generative mode — when data is thin or you're expanding before converging. Uses [SPECULATIVE] labels and Occam scoring. Triggers: "explore opportunity space", "OST without data", "assumption-based OST", "what opportunities might exist", "generative OST", "discovery is early", "build an OST from scratch". For data-grounded OSTs, use ost-evidence.
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -149,6 +150,13 @@ Use `flowchart TD` only — not mindmap. FigJam and Notion both render this form
 - Every test must be completable in under 2 weeks with minimal engineering
 - Occam's razor applies to assumption selection, not to generative extensions
 - If no discovery data is provided, proceed in assumption-only mode and note which sections require future research
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 

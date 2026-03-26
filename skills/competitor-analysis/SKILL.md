@@ -1,6 +1,7 @@
 ---
+version: 1.0.0
 name: competitor-analysis
-description: Conduct a rigorous competitor analysis using steelman-first methodology that challenges your positioning rather than confirming it. Use when the user needs to assess the competitive landscape, evaluate a positioning strategy, or find whitespace. Trigger phrases include: "competitor analysis", "competitive landscape", "how do we stack up against", "analyse our competition", "competitive positioning".
+description: Steelman-first competitive analysis — makes the case for why competitors win before assessing your position. Triggers: "competitor analysis", "competitive landscape", "how do we stack up against", "analyse our competition", "competitive positioning", "who are our competitors", "competitive threats", "where's the whitespace", "what's the competition doing".
 ---
 
 **Before starting:** present a brief work plan — what you will do and in what order — plus any clarifying questions, and wait for confirmation before proceeding.
@@ -63,6 +64,25 @@ Build a comparison matrix across:
 - Rank competitors by actual competitive overlap with your ICP — not all threats are equal
 - Distinguish between competitors' marketing claims and their actual product capabilities where possible
 - If your current positioning has a fundamental flaw, say so directly
+
+---
+
+## File output
+
+After producing the final output, save it as a markdown file in the current working directory:
+
+```
+Filename: [project-slug]-COMPETITIVE.md
+```
+
+If no project slug is evident from context, ask the user for one before saving. Confirm the save with: `Saved: [filename]`
+
+---
+
+
+## Gotchas
+
+<!-- Add a line here each time this skill produces the wrong output or misses something important. Fill from real failures, not hypotheses. -->
 
 ---
 
