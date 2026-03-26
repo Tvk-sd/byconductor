@@ -16,6 +16,7 @@ This conductor does NOT override any individual skill. If the user invokes a ski
 ```
 
 Optional flags:
+
 - `from:[phase]` — resume from a specific phase e.g. `/conductor from:build`
 - `skip:[phase]` — skip a phase e.g. `/conductor skip:design`
 
@@ -44,7 +45,7 @@ Gates move in one direction only. Loops iterate in place until exit conditions a
 
 Read `$ARGUMENTS`. If empty, ask: "What are you working on — do you have a clear outcome already, or are we still figuring that out?"
 
-Parse any flags (from, skip).
+Also, we have the Design Hand-Off skill. Is the Three Amigos something like the Design Hand-Off that's coming out of it?Parse any flags (from, skip).
 
 If `from:[phase]` is set, read the CONDUCTOR STATE block in CLAUDE.md and resume from that phase.
 
@@ -81,6 +82,7 @@ Ask three questions in sequence. Wait for an answer before asking the next.
 "What tells you this is a real problem worth solving — user feedback, your own frustration, something you observed?"
 
 If the signal is weak or unclear, surface the research fork:
+
 ```
 It sounds like the opportunity still needs validation before we scope it.
 
@@ -100,22 +102,26 @@ If Option B: tag the session [UNVALIDATED] and continue.
 Then ask: "Anything else to establish before we move on?"
 
 Run OST skills conditionally:
+
 - Fuzzy job → trigger jtbd-analysis
 - No existing signal → trigger ost-exploration
 - Signal exists → trigger ost-evidence
 - Strategic framing needed → trigger pm-thinking-partner
 
 **Enforcement:** If the user enters at Specify or later without completing Scope Zero, surface once:
+
 ```
 We're jumping into Specify without a framed opportunity.
 That's fine — but it means we're building without validating the why.
 Do you want to run Scope Zero first, or proceed?
 ```
+
 Respect their answer. Flag it in HANDOFF.md if skipped.
 
 ---
 
 **GATE 1**
+
 ```
 Scope Zero complete.
 
@@ -150,6 +156,7 @@ Then ask: "Anything else to establish before we scope it?"
 **Scope gate:**
 
 Estimate the size of Stage 1. Show the estimate with reasoning:
+
 ```
 Stage 1 estimate: [S / M / L]
 Reason: [1-2 sentences]
@@ -167,12 +174,14 @@ Does this staging work, or do you want to adjust the cut?
 Wait for approval on the staging. Do not advance until a stage is approved.
 
 **Vertical slice rule:** Every stage must include a frontend face + backend body + testable surface. If a proposed stage separates frontend from backend, flag it:
+
 ```
 This stage separates frontend from backend — that makes it untestable as a slice.
 Suggested fix: [proposal]
 ```
 
 **Routing:** If Stage 1 is Large or contains significant architectural decisions, recommend before Design:
+
 ```
 This is a complex build. Before we design, I'd recommend running:
 compound-engineering:workflows:plan
@@ -181,6 +190,7 @@ Want to do that now?
 ```
 
 **Backlog:**
+
 - Stage 1 scope → CONDUCTOR STATE block in CLAUDE.md
 - Full now/next/later staging → HANDOFF.md
 - If Later > 3 items → write `backlog.md`
@@ -188,6 +198,7 @@ Want to do that now?
 ---
 
 **GATE 2**
+
 ```
 Specify complete.
 
@@ -206,8 +217,25 @@ Write CONDUCTOR STATE to CLAUDE.md. Wait for approval.
 
 **Goal:** An approved prototype or mockup before any production code is written. Loop until approved.
 
+**Plan mode guard:**
+If `compound-engineering:workflows:plan` was run during Specify, plan mode may still be
+active. design-analysis and art-direction are design decision skills — their output must
+not be captured as planning steps. Before routing to either skill, explicitly note:
+"Exiting plan mode — design decisions happen outside it. I'll re-enter if needed after
+Design is approved."
+Exit plan mode before proceeding. Resume if the user returns to plan-mode work.
+
 **Art direction check:**
-If visual identity is undefined, run art-direction skill before first iteration.
+
+1. Look for `[project-slug]-ARTDIRECTION.md` in the working directory.
+  - If found: read it. Use it as the persistent design lens for all design decisions
+   in this phase. State: "Reading [filename] as the design lens for this session."
+  - If not found and visual identity is undefined: run art-direction (or design-analysis
+  → art-direction) before the first design iteration.
+  - If not found and visual identity is clear from context: proceed without it.
+
+The ARTDIRECTION.md file is the single source of truth for visual identity. Any design
+iteration in this phase should be held against it.
 
 **Tool selection:**
 Offer three options — never skip this step, but make skipping explicit:
@@ -263,6 +291,7 @@ If all three pass → exit loop.
 ---
 
 **GATE 3**
+
 ```
 Design approved.
 
@@ -294,21 +323,18 @@ The conductor voices three perspectives in sequence:
 **Agenda (run in order):**
 
 1. **User flow** — Generate a Mermaid UML of the happy path + key branches.
-   If Design produced a prototype, this is a translation. If Design was skipped, generate from Specify output.
-
+  If Design produced a prototype, this is a translation. If Design was skipped, generate from Specify output.
 2. **Edge cases** — Table of scenarios and expected behavior.
-   Claude surfaces candidates from the design; human confirms.
-
+  Claude surfaces candidates from the design; human confirms.
 3. **Integration checklist** — Plain list of tools, services, or accounts needed before Build.
-   Format: `[ ] [tool/service] — needed before Build starts?`
+  Format: `[ ] [tool/service] — needed before Build starts?`
    Example: `[ ] Supabase account — needed before Build starts?`
    Human confirms each item.
-
 4. **Feasibility flags** — Inherited from Design R2 soft concerns. Resolve or defer with owner.
-
 5. **Acceptance criteria** — Inherited from Specify Q3. Confirm, not rewrite.
 
 **Signpost Later items:**
+
 ```
 Stages 2–[N] are parked. They will be offered again at Ship.
 ```
@@ -316,6 +342,7 @@ Stages 2–[N] are parked. They will be offered again at Ship.
 **Build confidence signal:**
 
 After all agenda items are resolved:
+
 ```
 Build confidence: [High / Medium / Low]
 
@@ -346,19 +373,23 @@ Checklist:
 ```
 
 **Contract change rule (applies in Build):**
+
 - Cosmetic drift (copy, spacing, color) → update contract in place, log change
 - Structural change (flow altered, feature scope changed, new state added) → mini Three Amigos checkpoint before continuing
 
 **Enforcement:** If user tries to skip Three Amigos:
+
 ```
 Three Amigos sets the contract Build is held against — skipping means no contract.
 Proceed anyway?
 ```
+
 Respect their answer. Flag in HANDOFF.md if skipped.
 
 ---
 
 **GATE 4**
+
 ```
 Three Amigos complete.
 
@@ -382,6 +413,7 @@ Write CONDUCTOR STATE to CLAUDE.md. Wait for approval.
 **Proposal pattern:**
 
 At the start of each iteration, Claude proposes:
+
 ```
 Next: [feature name]
 Why: [one sentence rationale]
@@ -403,6 +435,7 @@ Functional test — happy path + key edge cases from Three Amigos agenda.
 
 **R2 — Does it match the contract, or does the contract need to change?**
 If contract change needed:
+
 - Cosmetic → update in place, log it
 - Structural → run mini Three Amigos checkpoint before continuing:
   ```
@@ -414,11 +447,12 @@ If contract change needed:
 **R3 — Does it look great?**
 Visual and UX approval — yes/no, human has final call.
 
-4. Human approves → next feature. Loop continues.
+1. Human approves → next feature. Loop continues.
 
 **Stage 1 exit:**
 
 When all features are built and acceptance criteria are met, Claude proposes:
+
 ```
 Stage 1 appears complete.
 
@@ -438,6 +472,7 @@ Both Claude and human confirm before exiting Build.
 **Goal:** Stage 1 delivered cleanly. Later items surfaced. Session closed or continued.
 
 **Open with Later items:**
+
 ```
 Stage 1 is shipped. You have [N] stages parked from Specify:
   [Stage 2 summary]
@@ -447,6 +482,7 @@ What do you want to do with them?
 ```
 
 **Delivery type — ask before anything else runs:**
+
 ```
 How are we shipping this?
 
@@ -468,6 +504,7 @@ Note: conductor prepares, Claude Code executes.
 
 **Path C — Hand off to a developer:**
 Write technical handoff notes inline:
+
 - What was built and why
 - Stage 1 scope and acceptance criteria
 - Design contract summary
@@ -477,17 +514,20 @@ Update HANDOFF.md with handoff context.
 
 **Path D — Share or publish:**
 Route to existing skills based on target:
+
 - Stakeholder update → stakeholder-communication skill
 - Launch announcement → launch-planning skill
 - LinkedIn post / blog / changelog → draft-content skill (marketing plugin)
 
 **Named steps (all paths):**
+
 1. Path-specific actions (above)
 2. Update HANDOFF.md — narrative summary of what shipped
 3. Write CONDUCTOR STATE to CLAUDE.md — mark phase complete
 4. Offer continue / pause / done
 
 **After Ship:**
+
 ```
 Stage 1 is complete and shipped.
 
@@ -535,3 +575,4 @@ Next step: [what happens when session resumes]
 - Always carry the outcome, opportunity, and design contract forward as context in every subsequent phase
 - The conductor is a PM OS, not a deployment tool — for merge, deploy, and git operations, produce a handoff packet for Claude Code
 - The conductor does not close sessions unilaterally — always offer continue / pause / done and wait for human confirmation
+

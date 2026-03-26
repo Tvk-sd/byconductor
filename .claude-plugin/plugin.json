@@ -1,0 +1,13 @@
+{
+  "name": "pm-os",
+  "version": "0.1.0",
+  "description": "A complete PM workflow OS for Claude Code — 21 skills, /build and /research conductors, ready to use in minutes.",
+  "author": {
+    "name": "Till",
+    "url": "https://github.com/till"
+  },
+  "homepage": "https://pm-os.vercel.app",
+  "repository": "https://github.com/till/pm-os",
+  "license": "MIT",
+  "keywords": ["product-management", "pm", "workflow", "skills", "conductors"]
+}
