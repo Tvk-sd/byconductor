@@ -1,43 +1,44 @@
 # Conductor
 
-A PM operating system for Claude Code. Install once, get 23 PM skills and the `/conductor` workflow — ready to use immediately.
+A PM operating system for Claude Code. Validate the opportunity first, then design, then build.
 
-Built for senior PMs and technical builders who want a system, not just prompts.
+Built for senior PMs who want a system that thinks like they do — not a chatbot, not a terminal tool.
 
 ---
 
-## What's inside
+## Why Conductor
 
-**1 Conductor** — a structured multi-phase workflow with checkpoints:
-- `/conductor` — Scope Zero → Specify → Design → Three Amigos → Build → Ship
-
-**23 Skills** — triggered by natural language phrases:
-
-| Conductor phase | Skills |
+| Problem | How Conductor solves it |
 |---|---|
-| Scope Zero | Concept brief, JTBD analysis, OST (evidence + exploration), AI decision framework, PM thinking partner, Competitor analysis, AI market research, Brainstorming |
-| Specify | PRD writing, User stories, Metrics definition, Feature prioritisation, AI feature scoping |
-| Design | UI/UX direction, Art direction, Figma Make prompt generator |
-| Three Amigos | Stakeholder communication, Workflow documentation |
-| Build | Build workflow |
-| Ship | Launch planning, Project handoff |
+| Sessions produce artifacts, not value | Scope Zero gates entry — no phase starts without a validated opportunity |
+| Skills feel disconnected | Each phase feeds the next; output of Specify is input to Design |
+| "I don't know which skill to invoke" | Describe where you are — conductor routes |
+| Context lost between sessions | Conductor writes a state block to CLAUDE.md; next session resumes from last checkpoint |
+| Hard to hand off to a collaborator | HANDOFF.md is narrative, human-readable, shareable |
 
 ---
 
-## Install
+## How it works
 
-```bash
-claude plugins install --url https://github.com/Tvk-sd/byconductor
+```
+SCOPE ZERO        Gate — is there a real opportunity here?
+      ↓
+SPECIFY           Gate — what exactly are we solving, for whom?
+      ↓
+DESIGN            Loop — make → review → refine → approve
+      ↓
+THREE AMIGOS      Gate — PM + design + build alignment, contract written
+      ↓
+BUILD             Loop — plan → build → review → approve
+      ↓
+SHIP              Gate — deploy, communicate, handoff
 ```
 
-Restart Claude Code. Type `/conductor` to start.
+Six moments. Two loops. Four gates.
 
----
+Gates move in one direction — you cannot re-enter a previous gate without a checkpoint. Loops iterate until exit conditions are met.
 
-## Requirements
-
-- Claude Code (any recent version)
-- A Claude API subscription or Anthropic API key
+**Scope Zero is not a phase — it is an entry condition.** You cannot enter Specify without a one-sentence outcome and a framed opportunity. Everything downstream has a validated reason to exist.
 
 ---
 
@@ -69,6 +70,61 @@ Write a PRD for the notifications feature
 Prioritise this backlog using RICE scoring
 Think through this with me — I'm trying to decide if we should...
 ```
+
+---
+
+## 23 Skills
+
+| Conductor phase | Skills |
+|---|---|
+| Scope Zero | Concept brief, JTBD analysis, OST (evidence + exploration), AI decision framework, PM thinking partner, Competitor analysis, AI market research, Brainstorming |
+| Specify | PRD writing, User stories, Metrics definition, Feature prioritisation, AI feature scoping |
+| Design | UI/UX direction, Art direction, Figma Make prompt generator |
+| Three Amigos | Stakeholder communication, Workflow documentation |
+| Build | Build workflow |
+| Ship | Launch planning, Project handoff |
+
+All 23 skills are also directly invocable by phrase — no conductor overhead required.
+
+---
+
+## vs other frameworks
+
+| | GSD | BMAD | Superpowers | Conductor |
+|---|---|---|---|---|
+| **Core philosophy** | Ship fast, learn from output | Document everything upfront, then build | Test-first, edge-case extraction | Validate the opportunity first, then design, then build |
+| **Entry point** | Idea → MVP immediately | Idea → documentation → build | Idea → test suite → build | Idea → opportunity framing → everything else |
+| **Planning rigidity** | Low — requirements evolve | High upfront, rigid after | Rigid via test definitions | Gate-rigid, loop-flexible |
+| **Design phase** | None | Captured in docs | None | Dedicated loop + Three Amigos gate |
+| **Human role** | Sets direction, approves output | Owns docs, delegates build | Confirms edge cases | Drives every loop — Claude proposes, human decides |
+| **PM fit** | Moderate | Low — assumes dev literacy | Low — test-oriented | Native — designed for PMs |
+| **Best for** | Unproven ideas, MVPs | Stable systems, known requirements | High-stakes agentic actions | PM-led work with fuzzy starting points |
+
+### When to choose which
+
+| Situation | Best fit |
+|---|---|
+| Scratching your own itch, speed matters | GSD |
+| Known requirements, stable system, regulated context | BMAD |
+| High-stakes action where edge cases must be exhaustive | Superpowers (or Conductor + Superpowers in Build) |
+| Fuzzy idea, PM-led, need to validate before building | Conductor |
+| Building for users who aren't you | Conductor — Scope Zero earns its cost |
+| Team already owns the design, just needs to build | Conductor skip:design or BMAD |
+| Agentic action with real-world side effects | Superpowers |
+
+The underlying pattern: these frameworks differ most in where they put the validation cost. GSD defers it entirely. BMAD pays it upfront in documentation. Superpowers pays it in test definitions. Conductor pays it in gates — progressively, at the moments when it's cheapest to change course.
+
+---
+
+## Install
+
+```bash
+claude plugins install --url https://github.com/Tvk-sd/byconductor
+```
+
+Restart Claude Code. Type `/conductor` to start.
+
+**Requirements:** Claude Code (any recent version) + Claude API subscription or Anthropic API key.
 
 ---
 
