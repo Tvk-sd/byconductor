@@ -1,6 +1,6 @@
 # Conductor
 
-A PM operating system for Claude Code. Install once, get 23 PM skills and three conductor workflows — `/conductor`, `/build`, and `/research` — ready to use immediately.
+A PM operating system for Claude Code. Install once, get 23 PM skills and the `/conductor` workflow — ready to use immediately.
 
 Built for senior PMs and technical builders who want a system, not just prompts.
 
@@ -8,10 +8,8 @@ Built for senior PMs and technical builders who want a system, not just prompts.
 
 ## What's inside
 
-**3 Conductors** — structured multi-phase workflows with checkpoints:
-- `/conductor` — opportunity-first: Scope Zero → Specify → Design → Three Amigos → Build → Ship
-- `/build` — phase-based: Discover → Specify → Design → Build → Review → Ship
-- `/research` — frames a question, investigates it thoroughly, delivers a recommendation
+**1 Conductor** — a structured multi-phase workflow with checkpoints:
+- `/conductor` — Scope Zero → Specify → Design → Three Amigos → Build → Ship
 
 **23 Skills** — triggered by natural language phrases:
 
@@ -45,11 +43,9 @@ Restart Claude Code. Type `/conductor` to start.
 
 ## Usage
 
-Run a conductor:
+Run the conductor:
 ```
 /conductor a user onboarding flow for a B2B SaaS product
-/build a user onboarding flow for a B2B SaaS product
-/research whether we should build or buy our auth system
 ```
 
 Trigger a skill by phrase:

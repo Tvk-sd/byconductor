@@ -1,14 +1,12 @@
-# PM OS — Active (V2)
+# Conductor — Active (V2)
 
-You have the PM OS plugin installed. This gives you a complete product management workflow system.
+You have Conductor installed. This gives you a complete PM operating system — one conductor workflow and 23 skills, all triggered by natural language.
 
 ## What's available
 
-### Conductors (slash commands)
+### Conductor (slash command)
 
-- `/conductor [what you want to build]` — **V2 conductor** (primary): Scope Zero → Specify → Design → Three Amigos → Build → Ship
-- `/build [what you want to build]` — V1 conductor (legacy): Discover → Specify → Design → Build → Review → Ship
-- `/research [what you want to research]` — structured research: Frame → Investigate → Synthesise → Recommend
+- `/conductor [what you want to build]` — Scope Zero → Specify → Design → Three Amigos → Build → Ship
 
 ### Skills (trigger by phrase)
 
@@ -36,18 +34,13 @@ You have the PM OS plugin installed. This gives you a complete product managemen
 | `art-direction` | "art direction", "visual identity", "creative brief" |
 | `ui-ux-pro-max` | "design this", "UI direction", "component style" |
 | `ai-market-research` | "research X market", "what do people say about" |
+| `build-workflow` | "how do I build this", "start a build", "what skill should I use", "parallel build" |
 
 ## How to use
 
-Start with the V2 conductor for new work:
+Start the conductor:
 ```
 /conductor a [feature or product]
-```
-
-Or use V1 conductors:
-```
-/build a [feature or product]
-/research [question or topic]
 ```
 
 Or trigger a skill directly by using one of the phrases above in your message.
