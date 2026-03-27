@@ -6,17 +6,15 @@ Built for senior PMs who want a system that thinks like they do — not a chatbo
 
 ---
 
-## Why Conductor
+## The problem
 
-| Problem | How Conductor solves it |
-|---|---|
-| Sessions produce artifacts, not value | Scope Zero gates entry — no phase starts without a validated opportunity |
-| Skills feel disconnected | Each phase feeds the next; output of Specify is input to Design |
-| "I don't know which skill to invoke" | Describe where you are — conductor routes |
-| Context lost between sessions | Conductor writes a state block to CLAUDE.md; next session resumes from last checkpoint |
-| Hard to hand off to a collaborator | HANDOFF.md is narrative, human-readable, shareable |
+AI-assisted product work drifts. Sessions produce conversation, documents, and artifacts — but no forward movement. The opportunity never gets validated. Skills feel disconnected. Context disappears between sessions. You ship a PRD nobody reads because the problem wasn't worth solving in the first place.
 
----
+This is session drift. It happens because most AI tools optimise for output, not progress.
+
+## The goal
+
+Eliminate session drift. Every session starts with a validated opportunity, advances through explicit gates, and ends with a committed next step or a shipped output. If it doesn't — Conductor failed.
 
 ## How it works
 
